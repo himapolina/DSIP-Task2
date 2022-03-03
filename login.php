@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $servername = "localhost:3307";
     $username = "root";
     $password = "";
@@ -14,10 +15,12 @@
     $result = mysqli_query($conn, $sql);
     $loginname = mysqli_fetch_array($result)['login_name'];
     if($loginname!="admin"){
+        $_SESSION["name"] = $loginname;
         echo "<script> alert('Login Successful!'); </script>";
         header('Location: user_index.php?login_name='.$loginname);
     }
     else if($loginname=="admin"){
+        $_SESSION["name"]= "admin";
         echo "<script> alert('Login Successful!'); </script>";
         header('Location: admin_index.php');
     }else{
