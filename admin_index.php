@@ -33,6 +33,7 @@
         <textarea name="entry" id="entry" placeholder="Type your entry here..." rows="5" cols="30"></textarea><br>
         <br><button type="submit" id="submit-button">Submit</button>
     </form>
+
 </center>
     
     <!-- displaying blogs-->
@@ -79,17 +80,27 @@
         }
         $entry = $_POST['entry'];
         $title = $_POST['title'];
-        //$time = date("h:i:sa") + " " + date("d-m-Y");
+        
         $sql = "INSERT INTO ENTRIES (entry_title, entry) VALUES ('$title', '$entry')";
         
         if($conn->query($sql)===TRUE){
-            header("Location: admin_index.php");
+            echo "<script type='text/javascript'>
+                alert('Entry Recorded Successfully!');
+                if ( window.history.replaceState ) {
+                    window.history.replaceState( null, null, window.location.href );
+                }
+                window.location = window.location.href;
+                
+                
+                
+                </script>";
+            //header("Location: admin_index.php", true, 303);
+            exit;
             
         }else{
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
         $conn->close();
     ?>
-    
 </body>
 </html>

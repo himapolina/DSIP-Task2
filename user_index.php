@@ -54,14 +54,20 @@
         ?>
     
     </div>
-    <center>
+    
     <footer>
         <div class="contact">
-            <p>Contact Author</p>
-            <img src="Hima Writes-logos\email logo.png">
-            <img src = "Hima Writes-logos\linkedin logo black.png">
-        </div>
+            <div>
+                <p>Contact Author</p>
+            </div>
+            <div>
+                <a href=""><img src="Hima Writes-logos\email logo.png"></a>
+            </div>
+            <div>
+                <a href=""><img src = "Hima Writes-logos\linkedin logo black.png" style="width:20%;"></a>
+            </div>
+            </div>
     </footer>
-</center>
+
 </body>
 </html>
