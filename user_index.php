@@ -9,21 +9,31 @@
     <lin rel="stylesheet" href='styles.css'>
 </head>
 <body>
-    
-    <div id="welcome-msg">
-        Welcome <span id="user"><?php $login_name = $_GET['login_name']; echo "$login_name";?>!</span>
+    <style>
+        body{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+
+    <div class="navbar">    
+    <div class="logo">
+        <img src= "Hima Writes-logos\Hima Writes-logos_transparent.png" style="width: 150px;" class="logo">
     </div>
-    <div>
-        <a href="login.html">Logout</a>
+    <div class="welcome-msg">
+        <p id="welcome-msg">
+        Welcome <span id="user"><?php $login_name = $_GET['login_name']; echo "$login_name";?></span>!
+    </p>
     </div>
+    <div class="logout">
+    <a href="logout.php">Logout</a>
+    </div>
+    </div>
+
+    <center>
+    <h2 id="heading"> Blog Entries</h2>
+    </center>
     <div class="blog-container">
-        <table class="table">
-            <thead><tr>
-                <th>Title</th>
-                <th>Entry</th>
-                <th>Time</th>
-            </thead>
-        <tbody>
+        
     
     <?php require_once('config.php') ?>
 
@@ -34,17 +44,15 @@
         $query = "SELECT * FROM entries ORDER BY entry_id DESC";
         $result = $conn->query($query) or die($conn->error);
         while($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["entry_title"]. "</td><td>" . substr($row["entry"],0,10 ). "</td><td>" . $row["entry_date"] . "</td></tr>";
-        }
-        echo "</table>";
+        echo "<link rel='stylesheet' href='styles.css'>";
+        echo "<div class='entry_boxes' ><div class='flex_box'><div class='title'>"  . $row["entry_title"] . 
+        "</div><div class='date'>" . $row["entry_date"] . 
+        "</div></div><div class='entry'>" . $row["entry"] .
+        "</div></div>";
+        
+    }
         ?>
-        </tbody>
-        </table>
-        <div class="blog-tile">
-            <h2 class="title"></h2>
-            <p class="time"></p>
-            <p class="blog-start"></p>
-        </div>
+    
     </div>
     
 </body>
