@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Login</title>
 </head>
 <body>
+    <center>
+    <div class="start-head">
+        <img src="Hima Writes-logos\Hima Writes-logos_transparent.png">
+        <h1>Login</h1>
+    </div>
+    <div class="login-form">
     <form id="loginForm" method="POST" action="login.php">
-        <label for="username" >Username</label>
-        <input type="text" name="username" required><br>
-        <label for="password">Password</label>
-        <input type="password" name="password" required><br>
+        <div class="form-field"><label for="username" >Username</label>
+        <input type="text" name="username" required></div>
+        <div class="form-field"><label for="password">Password</label>
+        <input type="password" name="password" required></div>
         <button type="submit">Login</button>
     </form>
     <p>New user? <a href="signup.php">Sign Up</a></p>
+    </div>
+</center>
 </body>
 </html>

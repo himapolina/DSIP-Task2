@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Page</title>
     <script src='scripts.js'></script>
-    <lin rel="stylesheet" href='styles.css'>
+    <link rel="stylesheet" href='styles.css'>
 </head>
 <body>
     <style>
@@ -54,6 +54,14 @@
         ?>
     
     </div>
-    
+    <center>
+    <footer>
+        <div class="contact">
+            <p>Contact Author</p>
+            <img src="Hima Writes-logos\email logo.png">
+            <img src = "Hima Writes-logos\linkedin logo black.png">
+        </div>
+    </footer>
+</center>
 </body>
 </html>

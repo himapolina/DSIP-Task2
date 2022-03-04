@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='scripts.js'></script>
-    <lin rel="stylesheet" href='styles.css'>
+    <link rel="stylesheet" href='styles.css'>
     <title>Admin Page</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
         <label for="title" id="title" class="title">Title</label>
         <input type="text" name="title" required><br><br>
         <textarea name="entry" id="entry" placeholder="Type your entry here..." rows="5" cols="30"></textarea><br>
-        <br><button type="submit" class="submit-button">Submit</button>
+        <br><button type="submit" id="submit-button">Submit</button>
     </form>
 </center>
     
